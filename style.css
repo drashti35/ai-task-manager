@@ -1,0 +1,829 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --primary: #4f46e5;
+    --primary-dark: #4338ca;
+
+    --background: #f5f7fb;
+    --card: #ffffff;
+
+    --text: #111827;
+    --muted: #6b7280;
+
+    --border: #e5e7eb;
+
+    --success: #15803d;
+    --success-bg: #dcfce7;
+
+    --warning: #b45309;
+    --warning-bg: #fef3c7;
+
+    --danger: #dc2626;
+    --danger-bg: #fee2e2;
+
+    --shadow:
+        0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+
+body {
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: var(--background);
+    color: var(--text);
+
+    min-height: 100vh;
+}
+
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+
+.app {
+    width: min(1000px, 92%);
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+}
+
+
+.header h1 {
+    font-size: 36px;
+    font-weight: 750;
+    letter-spacing: -1px;
+}
+
+
+.header p {
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+
+.header-stats {
+    display: flex;
+    gap: 12px;
+}
+
+
+.stat {
+    background: white;
+    border: 1px solid var(--border);
+
+    min-width: 85px;
+
+    padding: 12px 15px;
+
+    border-radius: 12px;
+
+    text-align: center;
+}
+
+
+.stat span {
+    display: block;
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+
+.stat small {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 24px;
+
+    margin-bottom: 20px;
+
+    box-shadow: var(--shadow);
+}
+
+
+.card-title {
+    margin-bottom: 20px;
+}
+
+
+.card h2 {
+    font-size: 20px;
+}
+
+
+.card-title p {
+    color: var(--muted);
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+
+.form-group label {
+    display: block;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 7px;
+}
+
+
+input,
+textarea {
+    width: 100%;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    padding: 12px 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+
+    background: white;
+}
+
+
+input:focus,
+textarea:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+
+textarea {
+    min-height: 100px;
+
+    resize: vertical;
+}
+
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+    border: none;
+
+    border-radius: 9px;
+
+    padding: 11px 17px;
+
+    font-weight: 600;
+
+    transition:
+        transform 0.15s,
+        background 0.15s,
+        opacity 0.15s;
+}
+
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+
+.btn-ai {
+    background: #111827;
+    color: white;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-section {
+    margin-bottom: 20px;
+}
+
+
+.search-box {
+    position: relative;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+}
+
+
+.search-box input {
+    border: none;
+
+    padding-left: 45px;
+
+    padding-right: 40px;
+
+    background: transparent;
+}
+
+
+.search-box input:focus {
+    box-shadow: none;
+}
+
+
+.search-icon {
+    position: absolute;
+
+    left: 16px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 24px;
+
+    color: var(--muted);
+}
+
+
+.clear-search {
+    position: absolute;
+
+    right: 10px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: #f3f4f6;
+
+    color: #555;
+
+    font-size: 20px;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   AI SECTION
+========================= */
+
+.ai-card {
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f7f7ff
+        );
+}
+
+
+.ai-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.ai-icon {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #ede9fe;
+
+    color: var(--primary);
+
+    font-size: 24px;
+
+    flex-shrink: 0;
+}
+
+
+.ai-heading {
+    flex: 1;
+}
+
+
+.ai-heading h2 {
+    font-size: 18px;
+}
+
+
+.ai-heading p {
+    margin-top: 4px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+.summary-box {
+    margin-top: 20px;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    background: #f5f3ff;
+
+    border: 1px solid #ddd6fe;
+}
+
+
+.summary-label {
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    color: var(--primary);
+
+    margin-bottom: 8px;
+}
+
+
+.summary-box p {
+    line-height: 1.7;
+
+    color: #374151;
+
+    white-space: pre-wrap;
+}
+
+
+/* =========================
+   MESSAGES
+========================= */
+
+.message {
+    padding: 13px 16px;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+
+    font-size: 14px;
+}
+
+
+.error {
+    background: var(--danger-bg);
+
+    color: #991b1b;
+
+    border: 1px solid #fecaca;
+}
+
+
+.success {
+    background: var(--success-bg);
+
+    color: #166534;
+
+    border: 1px solid #bbf7d0;
+}
+
+
+/* =========================
+   TASK HEADER
+========================= */
+
+.tasks-section {
+    margin-top: 30px;
+}
+
+
+.tasks-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 16px;
+}
+
+
+.tasks-header h2 {
+    font-size: 22px;
+}
+
+
+.tasks-header p {
+    color: var(--muted);
+
+    margin-top: 4px;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   TASK
+========================= */
+
+.task-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+.task {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+
+    transition:
+        box-shadow 0.2s,
+        transform 0.2s;
+}
+
+
+.task:hover {
+    transform: translateY(-1px);
+
+    box-shadow: var(--shadow);
+}
+
+
+.task.completed {
+    opacity: 0.65;
+}
+
+
+.task.completed .task-title {
+    text-decoration: line-through;
+}
+
+
+.task-main {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.task-title {
+    font-size: 17px;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+
+    word-break: break-word;
+}
+
+
+.task-description {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    margin-bottom: 12px;
+
+    word-break: break-word;
+}
+
+
+.task-meta {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+
+.status {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+.status.pending {
+    color: var(--warning);
+
+    background: var(--warning-bg);
+}
+
+
+.status.completed {
+    color: var(--success);
+
+    background: var(--success-bg);
+}
+
+
+.created-date {
+    color: #9ca3af;
+
+    font-size: 12px;
+}
+
+
+.task-actions {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    flex-shrink: 0;
+}
+
+
+.task-btn {
+    border: 1px solid var(--border);
+
+    background: white;
+
+    color: #374151;
+
+    border-radius: 8px;
+
+    padding: 8px 12px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.task-btn:hover {
+    background: #f9fafb;
+}
+
+
+.task-btn.delete {
+    color: var(--danger);
+
+    border-color: #fecaca;
+
+    background: #fffafa;
+}
+
+
+.task-btn.delete:hover {
+    background: var(--danger-bg);
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+    background: white;
+
+    border: 1px dashed #d1d5db;
+
+    border-radius: 14px;
+
+    padding: 50px 20px;
+
+    text-align: center;
+}
+
+
+.empty-icon {
+    width: 55px;
+    height: 55px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eef2ff;
+
+    color: var(--primary);
+
+    font-size: 24px;
+}
+
+
+.empty-state h3 {
+    font-size: 17px;
+
+    margin-bottom: 6px;
+}
+
+
+.empty-state p {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    margin-top: 40px;
+
+    color: #9ca3af;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .app {
+        width: 94%;
+        padding: 25px 0;
+    }
+
+
+    .header {
+        flex-direction: column;
+    }
+
+
+    .header h1 {
+        font-size: 30px;
+    }
+
+
+    .header-stats {
+        width: 100%;
+    }
+
+
+    .stat {
+        flex: 1;
+    }
+
+
+    .ai-header {
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+    }
+
+
+    .ai-heading {
+        min-width: 200px;
+    }
+
+
+    .btn-ai {
+        width: 100%;
+    }
+
+
+    .task {
+        flex-direction: column;
+    }
+
+
+    .task-actions {
+        flex-direction: row;
+    }
+
+
+    .task-actions button {
+        flex: 1;
+    }
+}

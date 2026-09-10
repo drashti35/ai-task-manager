@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Task Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Header -->
+        <header class="header">
+
+            <div>
+                <h1>Task Manager</h1>
+                <p>
+                    Organize your work and let AI summarize what is pending.
+                </p>
+            </div>
+
+            <div class="header-stats">
+                <div class="stat">
+                    <span id="totalTasks">0</span>
+                    <small>Total</small>
+                </div>
+
+                <div class="stat">
+                    <span id="pendingTasks">0</span>
+                    <small>Pending</small>
+                </div>
+
+                <div class="stat">
+                    <span id="completedTasks">0</span>
+                    <small>Completed</small>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- Main content -->
+        <main>
+
+            <!-- Add Task -->
+            <section class="card">
+
+                <div class="card-title">
+                    <div>
+                        <h2>Add New Task</h2>
+                        <p>Create a task with a title and description.</p>
+                    </div>
+                </div>
+
+                <form id="taskForm">
+
+                    <div class="form-group">
+
+                        <label for="title">
+                            Task Title
+                        </label>
+
+                        <input
+                            type="text"
+                            id="title"
+                            placeholder="e.g. Complete frontend assignment"
+                            maxlength="100"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="description">
+                            Description
+                        </label>
+
+                        <textarea
+                            id="description"
+                            placeholder="Add some details about the task..."
+                            maxlength="500"
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                            id="addTaskBtn"
+                        >
+                            <span>＋</span>
+                            Add Task
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- Search -->
+            <section class="search-section">
+
+                <div class="search-box">
+
+                    <span class="search-icon">⌕</span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search tasks by title..."
+                    >
+
+                    <button
+                        type="button"
+                        id="clearSearch"
+                        class="clear-search hidden"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- AI Summary -->
+            <section class="card ai-card">
+
+                <div class="ai-header">
+
+                    <div class="ai-icon">
+                        ✦
+                    </div>
+
+                    <div class="ai-heading">
+
+                        <h2>AI Task Summary</h2>
+
+                        <p>
+                            Get a quick overview of your pending work.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        id="summaryBtn"
+                        class="btn btn-ai"
+                    >
+                        Generate Summary
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="summaryBox"
+                    class="summary-box hidden"
+                >
+
+                    <div class="summary-label">
+                        AI Summary
+                    </div>
+
+                    <p id="summaryText"></p>
+
+                </div>
+
+            </section>
+
+
+            <!-- Error message -->
+            <div
+                id="errorMessage"
+                class="message error hidden"
+            ></div>
+
+
+            <!-- Success message -->
+            <div
+                id="successMessage"
+                class="message success hidden"
+            ></div>
+
+
+            <!-- Task list -->
+            <section class="tasks-section">
+
+                <div class="tasks-header">
+
+                    <div>
+                        <h2>Your Tasks</h2>
+                        <p id="taskCountText">
+                            0 tasks
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="taskList"
+                    class="task-list"
+                ></div>
+
+
+                <!-- Empty state -->
+                <div
+                    id="emptyState"
+                    class="empty-state"
+                >
+
+                    <div class="empty-icon">
+                        ✓
+                    </div>
+
+                    <h3>No tasks found</h3>
+
+                    <p>
+                        Add your first task to get started.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- Footer -->
+        <footer>
+            <p>
+                AI Task Manager • Built with HTML, CSS & JavaScript
+            </p>
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
